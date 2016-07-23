@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<div class="a b c">
+    a b c
+</div>
+<div class='b c'>
+    b c
+</div>
+<img src="sample01.jpg">
+<img src="sample01a.jpg">
+</body>
+<style>
+    /* node*1 = 1, .a.b.c = 3, finally = 4 */
+    div.a.b.c {
+        color: green;
+    }
+
+    .a.b.c {
+        color: blue;
+    }
+
+    .b.c {
+        color: red;
+    }
+
+    /* node*1 = 1, .a.b.c = 3, finally = 4 (但是他再後者宣告所以覆蓋前者) */
+    body .a.b.c {
+        color: silver;
+    }
+</style>
+</html>
