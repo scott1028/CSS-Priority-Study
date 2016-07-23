@@ -4,7 +4,7 @@
     <title></title>
 </head>
 <body>
-<div class="a b c">
+<div class="a b c d">
     a b c
 </div>
 <div class='b c'>
@@ -14,7 +14,7 @@
 <img src="sample01a.jpg">
 </body>
 <style>
-    /* node*1 = 1, .a.b.c = 3, finally = 4 */
+    /* node*1 = 1, .a.b.c = 6, finally = 7 */
     div.a.b.c {
         color: green;
     }
@@ -27,9 +27,18 @@
         color: red;
     }
 
-    /* node*1 = 1, .a.b.c = 3, finally = 4 (但是他再後者宣告所以覆蓋前者) */
+    /* node*1 = 1, .a.b.c = 6, finally = 7 (但是他再後者宣告所以覆蓋前者) */
     body .a.b.c {
         color: silver;
+    }
+
+    .a.b.c.d {
+        color: yellow;
+    }
+
+    /* node*2 = 2, .a.b = 4, finnaly = 6 (輸給上面的 7 分所以這個不會被套用)*/
+    body div.a.b {
+        color: black;
     }
 </style>
 </html>
