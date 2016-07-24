@@ -15,6 +15,16 @@
 <h4>補充</h4>
 <img src="sample01.jpg">
 <img src="sample01a.jpg">
+
+<h4>Pseudo Element & Node Element Test</h4>
+<div class="e">
+    <div class="f" id="f1">
+        e > f
+    </div>
+    <div class="f">
+        e > f
+    </div>
+</div>
 </body>
 <style>
     body {
@@ -51,6 +61,19 @@
     /* node*2 = 2, .a.b = 4, finnaly = 6 (輸給上面的 7 分所以這個不會被套用)*/
     body div.a.b {
         color: black;
+    }
+</style>
+<style>
+    #f1 {
+        font-size: 60pt;
+    }
+
+    .e .f {
+        font-size: 15pt;
+    }
+
+    .e *:first-child {
+        font-size: 30pt;
     }
 </style>
 </html>
